@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Mail, ShieldAlert, Info, ChevronDown } from "lucide-react";
 import FooterModal from "./FooterModal";
+import Logo from "./Logo";
 
 type ModalType = "about" | "careers" | "contact" | "help" | "privacy" | "terms" | null;
 
@@ -64,7 +65,7 @@ export default function Footer() {
               className="group inline-flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded-sm"
               aria-label="Fermor Home"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-accent transition-transform duration-200 group-hover:scale-110" />
+              <Logo className="w-5 h-5 text-accent transition-transform duration-200 group-hover:scale-105" />
               <span className="font-semibold text-base tracking-[0.22em] text-charcoal font-sans transition-colors group-hover:text-charcoal-light">
                 FERMOR
               </span>

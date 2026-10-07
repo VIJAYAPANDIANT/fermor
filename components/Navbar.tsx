@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import Logo from "./Logo";
 
 const NAV_LINKS = [
   { name: "Product", href: "#product" },
@@ -61,7 +62,7 @@ export default function Navbar() {
             className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded-sm"
             aria-label="Fermor Home"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-accent transition-transform duration-200 group-hover:scale-110" />
+            <Logo className="w-5 h-5 text-accent transition-transform duration-200 group-hover:scale-105" />
             <span className="font-semibold text-sm sm:text-base tracking-[0.22em] text-charcoal font-sans transition-colors group-hover:text-charcoal-light">
               FERMOR
             </span>
