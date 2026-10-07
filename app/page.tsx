@@ -6,6 +6,8 @@ import ProblemSolution from "@/components/ProblemSolution";
 import FinancialOverview from "@/components/FinancialOverview";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
+import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -18,7 +20,9 @@ export default function Home() {
         <FinancialOverview />
         <HowItWorks />
         <Features />
+        <FinalCTA />
       </main>
+      <Footer />
     </div>
   );
 }

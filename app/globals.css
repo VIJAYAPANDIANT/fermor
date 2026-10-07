@@ -16,12 +16,37 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     background-color: #FAF9F5;
     color: #121316;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  /* Unified button system */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full text-sm font-semibold text-canvas bg-charcoal hover:bg-charcoal-light active:scale-[0.98] transition-all duration-150 shadow-subtle hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/40;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full text-sm font-medium text-charcoal bg-white hover:bg-canvas-subtle active:scale-[0.98] border border-card-border transition-all duration-150 shadow-subtle hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40;
+  }
+
+  /* Consistent typography tokens */
+  .eyebrow-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-charcoal-muted bg-canvas-subtle border border-card-border;
+  }
+
+  .section-heading {
+    @apply text-2xl sm:text-3xl lg:text-[40px] font-bold tracking-tight text-charcoal leading-[1.14] font-sans;
+  }
+
+  .section-subtext {
+    @apply text-base sm:text-lg text-charcoal-muted leading-relaxed font-normal;
   }
 }
 

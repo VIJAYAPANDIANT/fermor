@@ -8,9 +8,7 @@ import {
   Target,
   TrendingUp,
   ArrowDownRight,
-  ShieldCheck,
   Check,
-  SlidersHorizontal,
 } from "lucide-react";
 
 export default function Features() {
@@ -28,58 +26,60 @@ export default function Features() {
   return (
     <section
       id="product"
-      className="relative py-20 sm:py-28 lg:py-36 bg-canvas border-t border-card-border/80 scroll-mt-20"
+      className="relative py-16 sm:py-20 lg:py-24 bg-canvas border-t border-card-border scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center space-y-4 mb-16 sm:mb-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-charcoal-muted bg-canvas-subtle border border-card-border">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="uppercase tracking-wider">Built around you</span>
+        <div className="max-w-2xl mx-auto text-center space-y-3 mb-14 sm:mb-20">
+          <div className="inline-flex items-center gap-2">
+            <span className="eyebrow-badge">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span>Built around you</span>
+            </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight text-charcoal leading-[1.12] font-sans">
+          <h2 className="section-heading">
             Everything you need to understand your money.
           </h2>
 
-          <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed font-normal">
+          <p className="section-subtext">
             Thoughtfully designed tools that connect everyday decisions with your long-term picture.
           </p>
         </div>
 
         {/* Asymmetric Editorial Bento Grid (7+5 / 5+7) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch">
           
           {/* FEATURE 1: Financial overview (Large - Col 7) */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-7 group rounded-2xl sm:rounded-3xl border border-card-border bg-white p-6 sm:p-9 shadow-subtle hover:shadow-card hover:border-charcoal/30 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
-            <div className="space-y-2 mb-6">
+            <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
                   <PieChart className="w-3.5 h-3.5 text-accent" />
                   Core Architecture
                 </span>
-                <span className="text-[10px] font-mono text-accent bg-accent-subtle px-2 py-0.5 rounded border border-accent-border/50">
+                <span className="text-[10px] font-mono text-accent bg-accent-subtle px-2 py-0.5 rounded border border-accent-border/40">
                   REAL-TIME
                 </span>
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-charcoal">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-charcoal">
                 Financial overview
               </h3>
-              <p className="text-sm sm:text-[15px] text-charcoal-muted leading-relaxed max-w-lg">
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed max-w-lg">
                 See balances, spending and savings in one clear picture.
               </p>
             </div>
 
             {/* Visual: Miniature Balance + Spending Preview */}
-            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 sm:p-5 space-y-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-3 pb-3 border-b border-card-borderSubtle">
+            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 space-y-3.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-3 pb-2.5 border-b border-card-borderSubtle">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-charcoal-muted block">
                     Combined Assets
@@ -94,7 +94,7 @@ export default function Features() {
                     <span className="text-[10px] font-mono text-charcoal-muted block">Spending</span>
                     <span className="font-semibold text-charcoal">$3,240</span>
                   </div>
-                  <div className="w-[1px] h-6 bg-card-border" />
+                  <div className="w-[1px] h-5 bg-card-border" />
                   <div className="text-right">
                     <span className="text-[10px] font-mono text-charcoal-muted block">Savings</span>
                     <span className="font-semibold text-accent">$8,420</span>
@@ -103,7 +103,7 @@ export default function Features() {
               </div>
 
               {/* Miniature Sparkline Graphic */}
-              <div className="w-full h-16 relative">
+              <div className="w-full h-14 relative">
                 <svg
                   viewBox="0 0 400 65"
                   className="w-full h-full overflow-visible"
@@ -112,7 +112,7 @@ export default function Features() {
                 >
                   <defs>
                     <linearGradient id="miniSpark" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#124E3F" stopOpacity="0.14" />
+                      <stop offset="0%" stopColor="#124E3F" stopOpacity="0.12" />
                       <stop offset="100%" stopColor="#124E3F" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
@@ -131,7 +131,7 @@ export default function Features() {
                 </svg>
               </div>
 
-              <div className="flex items-center justify-between text-[11px] text-charcoal-muted font-mono pt-1">
+              <div className="flex items-center justify-between text-[10px] text-charcoal-muted font-mono pt-0.5">
                 <span>6-month trend</span>
                 <span className="text-accent font-semibold">+8.4% monthly trajectory</span>
               </div>
@@ -140,15 +140,15 @@ export default function Features() {
 
           {/* FEATURE 2: Smart insights (Col 5) */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, delay: 0.08, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-5 group rounded-2xl sm:rounded-3xl border border-card-border bg-white p-6 sm:p-9 shadow-subtle hover:shadow-card hover:border-charcoal/30 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
+            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
-            <div className="space-y-2 mb-6">
+            <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-accent" />
                   Pattern Recognition
                 </span>
@@ -156,16 +156,16 @@ export default function Features() {
                   SIGNALS
                 </span>
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-charcoal">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-charcoal">
                 Smart insights
               </h3>
-              <p className="text-sm sm:text-[15px] text-charcoal-muted leading-relaxed">
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
                 Understand patterns and changes without digging through spreadsheets.
               </p>
             </div>
 
             {/* Visual: Insight Notification UI */}
-            <div className="rounded-xl border border-accent-border/60 bg-accent-subtle/50 p-4 sm:p-5 space-y-3">
+            <div className="rounded-xl border border-accent-border/50 bg-accent-subtle/40 p-4 space-y-2.5">
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
                   <ArrowDownRight className="w-3.5 h-3.5" />
@@ -186,15 +186,15 @@ export default function Features() {
 
           {/* FEATURE 3: Goals (Col 5) */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, delay: 0.14, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-5 group rounded-2xl sm:rounded-3xl border border-card-border bg-white p-6 sm:p-9 shadow-subtle hover:shadow-card hover:border-charcoal/30 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
+            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
-            <div className="space-y-2 mb-6">
+            <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
                   <Target className="w-3.5 h-3.5 text-accent" />
                   Target Tracking
                 </span>
@@ -202,79 +202,79 @@ export default function Features() {
                   PURPOSE
                 </span>
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-charcoal">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-charcoal">
                 Goals
               </h3>
-              <p className="text-sm sm:text-[15px] text-charcoal-muted leading-relaxed">
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
                 Connect everyday financial decisions to the things you&apos;re working toward.
               </p>
             </div>
 
             {/* Visual: Goal Progress Indicator UI */}
-            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 sm:p-5 space-y-3.5">
+            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-sm font-semibold text-charcoal">Emergency fund</span>
-                  <span className="text-[11px] font-mono text-charcoal-muted block">Liquid safety reserve</span>
+                  <span className="text-xs sm:text-sm font-semibold text-charcoal">Emergency fund</span>
+                  <span className="text-[10px] font-mono text-charcoal-muted block">Liquid safety reserve</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-base font-bold text-accent font-sans">72%</span>
+                  <span className="text-sm sm:text-base font-bold text-accent font-sans">72%</span>
                   <span className="text-[10px] font-mono text-charcoal-muted block">complete</span>
                 </div>
               </div>
 
               {/* Progress Bar */}
-              <div className="space-y-1.5">
-                <div className="w-full h-2 rounded-full bg-white border border-card-border overflow-hidden">
+              <div className="space-y-1">
+                <div className="w-full h-1.5 rounded-full bg-white border border-card-border overflow-hidden">
                   <div
-                    className="h-full bg-accent rounded-full transition-all duration-500"
+                    className="h-full bg-accent rounded-full transition-all duration-300"
                     style={{ width: "72%" }}
                   />
                 </div>
-                <div className="flex items-center justify-between text-[11px] font-mono text-charcoal-muted">
+                <div className="flex items-center justify-between text-[10px] font-mono text-charcoal-muted">
                   <span>Current: $7,200</span>
                   <span>Target: $10,000</span>
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-card-borderSubtle flex items-center gap-1.5 text-xs text-charcoal-muted">
+              <div className="pt-2 border-t border-card-borderSubtle flex items-center gap-1.5 text-[11px] text-charcoal-muted">
                 <Check className="w-3.5 h-3.5 text-accent" />
-                <span>On track for December 2026 completion</span>
+                <span>On track for December completion</span>
               </div>
             </div>
           </motion.div>
 
           {/* FEATURE 4: Progress (Col 7) */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-7 group rounded-2xl sm:rounded-3xl border border-card-border bg-white p-6 sm:p-9 shadow-subtle hover:shadow-card hover:border-charcoal/30 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            transition={{ duration: 0.4, delay: 0.16, ease: "easeOut" }}
+            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
-            <div className="space-y-2 mb-6">
+            <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted flex items-center gap-1.5">
                   <TrendingUp className="w-3.5 h-3.5 text-accent" />
                   Habit Dynamics
                 </span>
-                <span className="text-[10px] font-mono text-accent bg-accent-subtle px-2 py-0.5 rounded border border-accent-border/50">
+                <span className="text-[10px] font-mono text-accent bg-accent-subtle px-2 py-0.5 rounded border border-accent-border/40">
                   VELOCITY
                 </span>
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-charcoal">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-charcoal">
                 Progress
               </h3>
-              <p className="text-sm sm:text-[15px] text-charcoal-muted leading-relaxed max-w-lg">
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed max-w-lg">
                 See how your financial habits change over time.
               </p>
             </div>
 
             {/* Visual: Monthly Habit / Trend Visualization */}
-            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 sm:p-5 space-y-3">
+            <div className="rounded-xl border border-card-borderSubtle bg-canvas-subtle/50 p-4 space-y-2.5">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-medium text-charcoal">Monthly Net Savings Trend</span>
-                <span className="font-mono text-charcoal-muted">
+                <span className="font-mono text-[11px] text-charcoal-muted">
                   {activeBar !== null
                     ? `${monthlyProgress[activeBar].month}: +$${monthlyProgress[activeBar].amount}`
                     : "Steady growth"}
@@ -282,7 +282,7 @@ export default function Features() {
               </div>
 
               {/* Monthly Histogram Bars */}
-              <div className="h-20 flex items-end justify-between gap-3 pt-2">
+              <div className="h-16 flex items-end justify-between gap-3 pt-1">
                 {monthlyProgress.map((item, idx) => {
                   const isHovered = activeBar === idx;
                   const isLast = idx === monthlyProgress.length - 1;
@@ -292,13 +292,13 @@ export default function Features() {
                       key={item.month}
                       onMouseEnter={() => setActiveBar(idx)}
                       onMouseLeave={() => setActiveBar(null)}
-                      className="flex-1 flex flex-col items-center gap-1.5 h-full justify-end cursor-pointer group/bar"
+                      className="flex-1 flex flex-col items-center gap-1 h-full justify-end cursor-pointer group/bar"
                     >
                       <div
-                        className={`w-full max-w-[48px] rounded-t-md transition-all duration-200 ${
+                        className={`w-full max-w-[42px] rounded-t-sm transition-all duration-150 ${
                           isHovered || isLast
                             ? "bg-accent shadow-subtle"
-                            : "bg-charcoal/20 group-hover/bar:bg-charcoal/40"
+                            : "bg-charcoal/20 group-hover/bar:bg-charcoal/35"
                         }`}
                         style={{ height: `${item.height}%` }}
                       />

@@ -3,48 +3,47 @@
 import React from "react";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowRight, ShieldCheck, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import FinancialPreview from "./FinancialPreview";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  // Animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.1,
-        delayChildren: shouldReduceMotion ? 0 : 0.05,
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+        delayChildren: shouldReduceMotion ? 0 : 0.04,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.45, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-32">
+    <section className="relative overflow-hidden pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Editorial Value Proposition */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center space-y-6 sm:space-y-8"
+            className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center space-y-6 sm:space-y-7"
           >
-            {/* Small Eyebrow */}
+            {/* Eyebrow */}
             <motion.div variants={itemVariants} className="flex items-center">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-charcoal-muted bg-canvas-subtle border border-card-border">
+              <span className="eyebrow-badge">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 <span>Financial clarity platform</span>
               </span>
@@ -52,13 +51,13 @@ export default function Hero() {
 
             {/* Main Headline */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-charcoal leading-[1.07] font-sans">
+              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-charcoal leading-[1.08] font-sans">
                 Your money, <br className="hidden sm:inline" />
                 <span className="text-charcoal-muted">made clearer.</span>
               </h1>
               
               {/* Supporting Text */}
-              <p className="text-base sm:text-lg lg:text-[19px] text-charcoal-muted leading-relaxed max-w-xl font-normal">
+              <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed max-w-lg font-normal">
                 Understand where your money goes, make smarter decisions, and build toward what matters.
               </p>
             </motion.div>
@@ -66,20 +65,14 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1"
             >
-              <Link
-                href="#get-started"
-                className="group inline-flex items-center justify-center gap-2 bg-charcoal text-canvas hover:bg-charcoal-light active:scale-[0.98] px-6 py-3.5 rounded-full text-sm font-semibold shadow-subtle hover:shadow-card transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/40"
-              >
+              <Link href="#get-started" className="btn-primary group">
                 <span>Get started</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5" />
               </Link>
               
-              <Link
-                href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-charcoal active:scale-[0.98] px-6 py-3.5 rounded-full text-sm font-medium border border-card-border hover:border-card-border/80 shadow-subtle transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-              >
+              <Link href="#how-it-works" className="btn-secondary">
                 <span>Explore Fermor</span>
               </Link>
             </motion.div>
@@ -87,7 +80,7 @@ export default function Hero() {
             {/* Reassuring Trust Cues */}
             <motion.div
               variants={itemVariants}
-              className="pt-3 sm:pt-4 border-t border-card-border/60 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-charcoal-muted"
+              className="pt-2 sm:pt-3 border-t border-card-border flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-charcoal-muted"
             >
               <span className="flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-accent" />

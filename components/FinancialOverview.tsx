@@ -5,10 +5,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   TrendingUp,
   Sparkles,
-  ArrowDownRight,
   ShieldCheck,
   Calendar,
-  ChevronDown,
 } from "lucide-react";
 
 interface DataPoint {
@@ -37,45 +35,50 @@ export default function FinancialOverview() {
   const areaPath = `${chartPath} L 550 190 L 40 190 Z`;
 
   return (
-    <section className="relative py-20 sm:py-28 lg:py-36 bg-canvas border-t border-card-border/80">
+    <section
+      id="overview"
+      className="relative py-16 sm:py-20 lg:py-24 bg-canvas border-t border-card-border scroll-mt-20"
+    >
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center space-y-4 mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-charcoal-muted bg-canvas-subtle border border-card-border">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="uppercase tracking-wider">One clear view</span>
+        <div className="max-w-2xl mx-auto text-center space-y-3 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2">
+            <span className="eyebrow-badge">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span>One clear view</span>
+            </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight text-charcoal leading-[1.12] font-sans">
+          <h2 className="section-heading">
             See your financial life at a glance.
           </h2>
 
-          <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed font-normal">
+          <p className="section-subtext">
             Bring balances, spending, savings and financial signals into one simple overview.
           </p>
         </div>
 
         {/* Large Product Showcase Card */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="rounded-2xl sm:rounded-3xl border border-card-border bg-white shadow-elevated p-6 sm:p-9 lg:p-11 relative"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="rounded-2xl sm:rounded-3xl border border-card-border bg-white shadow-elevated p-5 sm:p-8 lg:p-10 relative"
         >
           {/* Top Interface Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-card-borderSubtle">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-canvas-subtle border border-card-border flex items-center justify-center text-charcoal shadow-subtle">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-card-borderSubtle">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-canvas-subtle border border-card-border flex items-center justify-center text-charcoal shadow-subtle">
                 <ShieldCheck className="w-4 h-4 text-accent" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-semibold text-charcoal">Consolidated Portfolio</span>
+                  <span className="text-xs sm:text-sm font-semibold text-charcoal">Consolidated Portfolio</span>
                   <span className="text-xs font-mono text-charcoal-muted">· Live</span>
                 </div>
-                <p className="text-xs text-charcoal-muted">All connected accounts and deposits</p>
+                <p className="text-[11px] text-charcoal-muted">All connected accounts and deposits</p>
               </div>
             </div>
 
@@ -88,21 +91,21 @@ export default function FinancialOverview() {
           </div>
 
           {/* Primary Balance Section */}
-          <div className="pt-8 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="pt-6 pb-5 flex flex-col md:flex-row md:items-end justify-between gap-3">
             <div>
               <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted block mb-1">
                 Total balance
               </span>
-              <div className="flex items-baseline gap-2.5">
+              <div className="flex items-baseline gap-2">
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal font-sans">
                   $24,680
                 </span>
-                <span className="text-sm font-mono text-charcoal-muted">.00</span>
+                <span className="text-xs sm:text-sm font-mono text-charcoal-muted">.00</span>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent bg-accent-subtle px-3 py-1 rounded-full border border-accent-border/50">
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent bg-accent-subtle px-2.5 py-1 rounded-full border border-accent-border/50">
                 <TrendingUp className="w-3.5 h-3.5" />
                 <span>+8.4% this month</span>
               </span>
@@ -113,8 +116,8 @@ export default function FinancialOverview() {
           </div>
 
           {/* 6-Month Trajectory Area / Line Chart */}
-          <div className="relative py-4 px-2 sm:px-4 rounded-2xl bg-canvas-subtle/40 border border-card-borderSubtle mb-8">
-            <div className="flex items-center justify-between pb-3 px-2">
+          <div className="relative py-3 px-2 sm:px-4 rounded-xl bg-canvas-subtle/40 border border-card-borderSubtle mb-6">
+            <div className="flex items-center justify-between pb-2 px-1">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
                 <span className="text-xs font-medium text-charcoal">Net Worth Trajectory</span>
@@ -126,7 +129,7 @@ export default function FinancialOverview() {
               </span>
             </div>
 
-            <div className="w-full h-44 sm:h-56 lg:h-64 relative overflow-hidden">
+            <div className="w-full h-40 sm:h-52 lg:h-60 relative overflow-hidden">
               <svg
                 viewBox="0 0 600 200"
                 className="w-full h-full overflow-visible"
@@ -153,7 +156,7 @@ export default function FinancialOverview() {
                   d={chartPath}
                   fill="none"
                   stroke="#124E3F"
-                  strokeWidth="2.5"
+                  strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -170,16 +173,6 @@ export default function FinancialOverview() {
                       onMouseLeave={() => setActivePoint(null)}
                       className="cursor-pointer"
                     >
-                      {isLatest && (
-                        <circle
-                          cx={pt.x}
-                          cy={pt.y}
-                          r="7"
-                          fill="#124E3F"
-                          fillOpacity="0.15"
-                          className="animate-ping"
-                        />
-                      )}
                       <circle
                         cx={pt.x}
                         cy={pt.y}
@@ -196,7 +189,7 @@ export default function FinancialOverview() {
             </div>
 
             {/* Month Axis Labels */}
-            <div className="flex justify-between px-3 pt-3 text-[11px] font-mono text-charcoal-muted border-t border-card-borderSubtle mt-1">
+            <div className="flex justify-between px-2 pt-2 text-[10px] sm:text-[11px] font-mono text-charcoal-muted border-t border-card-borderSubtle mt-1">
               {HISTORY_DATA.map((pt) => (
                 <span
                   key={pt.month}
@@ -211,54 +204,54 @@ export default function FinancialOverview() {
           </div>
 
           {/* Supporting Metrics + Insight Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
             
             {/* Metric 1: Spending */}
-            <div className="md:col-span-4 p-5 rounded-2xl border border-card-border bg-white flex flex-col justify-between">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted">
-                  Spending
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
+                  Monthly spending
                 </span>
-                <div className="text-2xl sm:text-3xl font-semibold text-charcoal font-sans tracking-tight">
+                <div className="text-2xl sm:text-3xl font-bold text-charcoal font-sans tracking-tight">
                   $3,240
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-4">
+              <div className="pt-3 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-3">
                 <span>Paced within $3,800 limit</span>
                 <span className="font-mono text-accent font-medium">85% cap</span>
               </div>
             </div>
 
             {/* Metric 2: Savings */}
-            <div className="md:col-span-4 p-5 rounded-2xl border border-card-border bg-white flex flex-col justify-between">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted">
-                  Savings
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
+                  Savings reserve
                 </span>
-                <div className="text-2xl sm:text-3xl font-semibold text-charcoal font-sans tracking-tight">
+                <div className="text-2xl sm:text-3xl font-bold text-charcoal font-sans tracking-tight">
                   $8,420
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-4">
+              <div className="pt-3 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-3">
                 <span>Emergency fund progress</span>
                 <span className="font-mono text-accent font-medium">84.2%</span>
               </div>
             </div>
 
             {/* Metric 3: Monthly Change */}
-            <div className="md:col-span-4 p-5 rounded-2xl border border-card-border bg-white flex flex-col justify-between">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-muted">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
                   Monthly change
                 </span>
-                <div className="text-2xl sm:text-3xl font-semibold text-accent font-sans tracking-tight flex items-baseline gap-1">
-                  <span>+12.4%</span>
+                <div className="text-2xl sm:text-3xl font-bold text-accent font-sans tracking-tight">
+                  +12.4%
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-4">
+              <div className="pt-3 flex items-center justify-between text-xs text-charcoal-muted border-t border-card-borderSubtle mt-3">
                 <span>Net liquidity velocity</span>
                 <span className="font-mono text-charcoal">+$1,420 net</span>
               </div>
@@ -267,24 +260,24 @@ export default function FinancialOverview() {
           </div>
 
           {/* Fermor Insight Card */}
-          <div className="mt-5 rounded-2xl border border-accent-border/60 bg-accent-subtle/60 p-5 sm:p-6 flex items-start gap-4">
-            <div className="w-8 h-8 rounded-xl bg-accent text-white flex items-center justify-center shrink-0 shadow-subtle mt-0.5">
-              <Sparkles className="w-4 h-4" />
+          <div className="mt-4 rounded-xl border border-accent-border/50 bg-accent-subtle/40 p-4 sm:p-5 flex items-start gap-3.5">
+            <div className="w-7 h-7 rounded-lg bg-accent text-white flex items-center justify-center shrink-0 shadow-subtle mt-0.5">
+              <Sparkles className="w-3.5 h-3.5" />
             </div>
 
-            <div className="space-y-1 flex-1">
+            <div className="space-y-0.5 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-mono uppercase tracking-wider text-accent font-semibold">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-accent font-semibold">
                   Fermor Insight
                 </span>
-                <span className="text-[11px] text-charcoal-muted font-mono">· Automated analysis</span>
+                <span className="text-[10px] text-charcoal-muted font-mono">· Automated analysis</span>
               </div>
 
-              <p className="text-sm sm:text-[15px] font-semibold text-charcoal leading-snug">
+              <p className="text-xs sm:text-sm font-semibold text-charcoal leading-snug">
                 Your spending is trending lower than the previous month.
               </p>
               
-              <p className="text-xs sm:text-[13px] text-charcoal-muted leading-relaxed">
+              <p className="text-xs text-charcoal-muted leading-relaxed">
                 Discretionary expenses are down 14% compared to August. You are on track to exceed your quarterly savings milestone by $480.
               </p>
             </div>

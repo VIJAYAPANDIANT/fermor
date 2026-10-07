@@ -29,21 +29,21 @@ export default function ValueStrip() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative border-y border-card-border/80 bg-canvas-subtle/40">
+    <section className="relative border-y border-card-border bg-canvas-subtle/30">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-card-border/80 py-6 sm:py-9"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-card-border py-6 sm:py-8"
         >
           {VALUES.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.title}
-                className={`flex items-start gap-4 py-5 md:py-2 ${
+                className={`flex items-start gap-3.5 py-4 md:py-1 ${
                   idx === 0
                     ? "md:pr-8"
                     : idx === 1
@@ -51,7 +51,7 @@ export default function ValueStrip() {
                     : "md:pl-8"
                 }`}
               >
-                <div className="w-9 h-9 rounded-xl bg-white border border-card-border flex items-center justify-center shrink-0 text-charcoal shadow-subtle">
+                <div className="w-8 h-8 rounded-lg bg-white border border-card-border flex items-center justify-center shrink-0 text-charcoal shadow-subtle">
                   <Icon className="w-4 h-4 text-accent" />
                 </div>
                 <div className="space-y-1">
