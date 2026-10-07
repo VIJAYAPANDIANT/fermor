@@ -2,9 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fermor — Your money, made clearer.",
-  description:
-    "Understand where your money goes, make smarter decisions, and build toward what matters. Calm, intelligent financial clarity for modern life.",
+  title: "Fermor — Your Money, Made Clearer",
+  description: "A clearer way to understand, act and grow financially.",
   icons: {
     icon: "/favicon.ico",
   },

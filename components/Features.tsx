@@ -25,9 +25,10 @@ export default function Features() {
 
   return (
     <section
-      id="product"
+      id="features"
       className="relative py-16 sm:py-20 lg:py-24 bg-canvas border-t border-card-border scroll-mt-20"
     >
+      <span id="product" className="sr-only" aria-hidden="true" />
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         
         {/* Section Header */}

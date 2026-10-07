@@ -9,7 +9,10 @@ export default function FinalCTA() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-canvas border-t border-card-border overflow-hidden">
+    <section
+      id="get-started"
+      className="relative py-16 sm:py-20 lg:py-24 bg-canvas border-t border-card-border overflow-hidden scroll-mt-20"
+    >
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         
         {/* Rounded Hero Container */}
