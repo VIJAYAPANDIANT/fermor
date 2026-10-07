@@ -30,7 +30,7 @@ export default function FinancialPreview() {
       className="w-full max-w-lg mx-auto lg:max-w-none"
     >
       {/* Outer Floating Card Container */}
-      <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-card-border shadow-card p-5 sm:p-6 lg:p-7 transition-all duration-200 hover:shadow-elevated">
+      <div className="relative rounded-2xl sm:rounded-3xl bg-card border border-card-border shadow-card p-5 sm:p-6 lg:p-7 transition-all duration-200 hover:shadow-elevated">
         
         {/* Top Account Meta Header */}
         <div className="flex items-center justify-between pb-4 border-b border-card-borderSubtle">
@@ -93,14 +93,14 @@ export default function FinancialPreview() {
             >
               <defs>
                 <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#124E3F" stopOpacity="0.12" />
-                  <stop offset="90%" stopColor="#124E3F" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.16" />
+                  <stop offset="90%" stopColor="rgb(var(--color-accent))" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
 
               {/* Horizontal Reference Lines */}
-              <line x1="10" y1="20" x2="290" y2="20" stroke="#E7E5DD" strokeDasharray="3 3" strokeWidth="0.8" />
-              <line x1="10" y1="56" x2="290" y2="56" stroke="#E7E5DD" strokeDasharray="3 3" strokeWidth="0.8" />
+              <line x1="10" y1="20" x2="290" y2="20" stroke="rgb(var(--color-card-border))" strokeDasharray="3 3" strokeWidth="0.8" />
+              <line x1="10" y1="56" x2="290" y2="56" stroke="rgb(var(--color-card-border))" strokeDasharray="3 3" strokeWidth="0.8" />
 
               {/* Area Under Curve */}
               <path d={svgArea} fill="url(#chartGradient)" />
@@ -109,7 +109,7 @@ export default function FinancialPreview() {
               <path
                 d={svgPath}
                 fill="none"
-                stroke="#124E3F"
+                stroke="rgb(var(--color-accent))"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -126,8 +126,8 @@ export default function FinancialPreview() {
                     cx={pt.x}
                     cy={pt.y}
                     r={hoveredIndex === idx || idx === DATA_POINTS.length - 1 ? 4 : 2.5}
-                    fill={hoveredIndex === idx || idx === DATA_POINTS.length - 1 ? "#124E3F" : "#FFFFFF"}
-                    stroke="#124E3F"
+                    fill={hoveredIndex === idx || idx === DATA_POINTS.length - 1 ? "rgb(var(--color-accent))" : "rgb(var(--color-card))"}
+                    stroke="rgb(var(--color-accent))"
                     strokeWidth="1.8"
                     className="cursor-pointer transition-all duration-150"
                   />
@@ -148,7 +148,7 @@ export default function FinancialPreview() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
           
           {/* Monthly Spending Card */}
-          <div className="p-3.5 rounded-xl border border-card-border bg-white flex flex-col justify-between">
+          <div className="p-3.5 rounded-xl border border-card-border bg-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-charcoal-muted">
@@ -184,7 +184,7 @@ export default function FinancialPreview() {
           </div>
 
           {/* Savings Indicator Card */}
-          <div className="p-3.5 rounded-xl border border-card-border bg-white flex flex-col justify-between">
+          <div className="p-3.5 rounded-xl border border-card-border bg-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-charcoal-muted">

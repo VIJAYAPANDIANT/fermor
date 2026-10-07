@@ -5,11 +5,67 @@
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Canvas Substrate */
+  --color-canvas: 250 249 245;            /* #FAF9F5 */
+  --color-canvas-subtle: 244 242 235;     /* #F4F2EB */
+  --color-canvas-muted: 237 234 225;      /* #EDEAE1 */
+
+  /* Charcoal Typography */
+  --color-charcoal: 18 19 22;             /* #121316 */
+  --color-charcoal-light: 43 45 51;       /* #2B2D33 */
+  --color-charcoal-muted: 102 105 115;    /* #666973 */
+  --color-charcoal-faint: 150 153 163;    /* #9699A3 */
+
+  /* Accent Forest Pine */
+  --color-accent: 18 78 63;               /* #124E3F */
+  --color-accent-hover: 13 58 47;         /* #0D3A2F */
+  --color-accent-subtle: 237 245 242;     /* #EDF5F2 */
+  --color-accent-border: 178 216 205;     /* #B2D8CD */
+
+  /* Card Surfaces & Dividers */
+  --color-card: 255 255 255;              /* #FFFFFF */
+  --color-card-border: 231 229 221;       /* #E7E5DD */
+  --color-card-border-subtle: 240 238 232; /* #F0EEE8 */
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px rgba(18, 19, 22, 0.04), 0 1px 2px rgba(18, 19, 22, 0.02);
+  --shadow-card: 0 4px 20px -2px rgba(18, 19, 22, 0.05), 0 2px 6px -1px rgba(18, 19, 22, 0.03);
+  --shadow-elevated: 0 12px 32px -4px rgba(18, 19, 22, 0.08), 0 4px 12px -2px rgba(18, 19, 22, 0.03);
+}
+
+.dark {
+  /* Obsidian Canvas */
+  --color-canvas: 13 14 18;               /* #0D0E12 */
+  --color-canvas-subtle: 20 22 28;        /* #14161C */
+  --color-canvas-muted: 28 31 39;         /* #1C1F27 */
+
+  /* Light Charcoal Typography */
+  --color-charcoal: 243 244 246;          /* #F3F4F6 */
+  --color-charcoal-light: 229 231 235;    /* #E5E7EB */
+  --color-charcoal-muted: 156 163 175;    /* #9CA3AF */
+  --color-charcoal-faint: 107 114 128;    /* #6B7280 */
+
+  /* Luminous Mint Accent */
+  --color-accent: 45 212 191;             /* #2DD4BF */
+  --color-accent-hover: 94 234 212;       /* #5EEAD4 */
+  --color-accent-subtle: 20 45 42;        /* Dark mint tint */
+  --color-accent-border: 35 90 82;
+
+  /* Elevated Dark Card Surfaces & Dividers */
+  --color-card: 19 21 27;                 /* #13151B */
+  --color-card-border: 35 38 48;          /* #232630 */
+  --color-card-border-subtle: 26 29 37;   /* #1A1D25 */
+
+  /* Dark Shadows */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 2px 6px -1px rgba(0, 0, 0, 0.25);
+  --shadow-elevated: 0 12px 32px -4px rgba(0, 0, 0, 0.55), 0 4px 12px -2px rgba(0, 0, 0, 0.35);
 }
 
 @layer base {
   * {
-    border-color: #E7E5DD;
+    border-color: rgb(var(--color-card-border));
   }
 
   html {
@@ -20,9 +76,10 @@
   }
 
   body {
-    background-color: #FAF9F5;
-    color: #121316;
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-charcoal));
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 150ms ease, color 150ms ease;
   }
 }
 
@@ -33,7 +90,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full text-sm font-medium text-charcoal bg-white hover:bg-canvas-subtle active:scale-[0.98] border border-card-border transition-all duration-150 shadow-subtle hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40;
+    @apply inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full text-sm font-medium text-charcoal bg-card hover:bg-canvas-subtle active:scale-[0.98] border border-card-border transition-all duration-150 shadow-subtle hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40;
   }
 
   /* Consistent typography tokens */

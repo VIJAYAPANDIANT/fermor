@@ -94,7 +94,7 @@ export default function ProblemSolution() {
                   </div>
 
                   {/* With Fermor */}
-                  <div className="space-y-1 rounded-xl bg-white border border-card-border p-3.5 sm:p-4 shadow-subtle">
+                  <div className="space-y-1 rounded-xl bg-card border border-card-border p-3.5 sm:p-4 shadow-subtle">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-accent font-semibold flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                       With Fermor

@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const NAV_LINKS = [
   { name: "Product", href: "#product" },
@@ -13,6 +14,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +70,7 @@ export default function Navbar() {
 
         {/* Center: Navigation Links (Desktop) */}
         <nav
-          className="hidden md:flex items-center gap-1 bg-white/80 border border-card-border rounded-full px-3.5 py-1.5 shadow-subtle"
+          className="hidden md:flex items-center gap-1 bg-card/85 border border-card-border rounded-full px-3.5 py-1.5 shadow-subtle backdrop-blur-sm"
           aria-label="Main Navigation"
         >
           {NAV_LINKS.map((link) => (
@@ -84,6 +86,21 @@ export default function Navbar() {
 
         {/* Right: Actions (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
+          {/* Theme Mode Switcher */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full text-charcoal-muted hover:text-charcoal bg-card hover:bg-canvas-subtle border border-card-border transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 shadow-subtle"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4 text-accent transition-transform duration-200 hover:rotate-45" />
+            ) : (
+              <Moon className="w-4 h-4 text-charcoal-muted transition-transform duration-200 hover:-rotate-12" />
+            )}
+          </button>
+
           <Link
             href="#signin"
             className="text-[13px] font-medium text-charcoal-muted hover:text-charcoal px-3 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent/40 rounded-md"
@@ -99,21 +116,38 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Trigger */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl text-charcoal hover:bg-canvas-subtle border border-card-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-nav-panel"
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-        >
-          {mobileMenuOpen ? (
-            <X className="w-5 h-5 text-charcoal" />
-          ) : (
-            <Menu className="w-5 h-5 text-charcoal" />
-          )}
-        </button>
+        {/* Mobile Action Triggers */}
+        <div className="md:hidden flex items-center gap-2">
+          {/* Mobile Theme Toggle Button */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-charcoal-muted hover:text-charcoal bg-card border border-card-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4 text-accent" />
+            ) : (
+              <Moon className="w-4 h-4 text-charcoal-muted" />
+            )}
+          </button>
+
+          {/* Mobile Hamburger Trigger */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-charcoal hover:bg-canvas-subtle border border-card-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-panel"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          >
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5 text-charcoal" />
+            ) : (
+              <Menu className="w-5 h-5 text-charcoal" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Panel */}
@@ -125,21 +159,49 @@ export default function Navbar() {
           aria-modal="true"
           aria-label="Mobile Navigation"
         >
-          <div className="space-y-4">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-charcoal-faint px-2">
-              Navigation
-            </p>
-            <div className="flex flex-col space-y-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium text-charcoal hover:text-accent px-3 py-2.5 rounded-xl hover:bg-canvas-subtle transition-colors"
+          <div className="space-y-6">
+            <div>
+              <p className="text-[11px] font-mono uppercase tracking-widest text-charcoal-faint px-2 mb-2">
+                Navigation
+              </p>
+              <div className="flex flex-col space-y-1">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-medium text-charcoal hover:text-accent px-3 py-2.5 rounded-xl hover:bg-canvas-subtle transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Theme Toggle in Mobile Menu */}
+            <div className="pt-4 border-t border-card-border">
+              <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-card border border-card-border">
+                <span className="text-xs font-mono uppercase tracking-wider text-charcoal-muted">
+                  Theme mode
+                </span>
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-charcoal bg-canvas-subtle border border-card-border transition-colors"
                 >
-                  {link.name}
-                </Link>
-              ))}
+                  {theme === "dark" ? (
+                    <>
+                      <Sun className="w-3.5 h-3.5 text-accent" />
+                      <span>Light mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="w-3.5 h-3.5 text-charcoal-muted" />
+                      <span>Dark mode</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -147,7 +209,7 @@ export default function Navbar() {
             <Link
               href="#signin"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 text-sm font-medium text-charcoal hover:bg-canvas-subtle rounded-full border border-card-border transition-colors"
+              className="w-full text-center py-3 text-sm font-medium text-charcoal hover:bg-canvas-subtle rounded-full border border-card-border transition-colors bg-card"
             >
               Sign in
             </Link>

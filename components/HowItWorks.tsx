@@ -83,7 +83,7 @@ export default function HowItWorks() {
                 >
                   {/* Step Indicator Header */}
                   <div className="flex items-center justify-between md:justify-start gap-3.5 mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-white border border-card-border flex items-center justify-center text-charcoal shadow-subtle group-hover:border-accent transition-all duration-150">
+                    <div className="w-12 h-12 rounded-xl bg-card border border-card-border flex items-center justify-center text-charcoal shadow-subtle group-hover:border-accent transition-all duration-150">
                       <Icon className="w-4 h-4 text-accent transition-transform duration-150 group-hover:scale-105" />
                     </div>
 

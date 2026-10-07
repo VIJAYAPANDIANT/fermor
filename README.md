@@ -17,6 +17,7 @@ Coming soon
 ## Features
 
 - Responsive fintech homepage
+- Dual theme modes: Warm editorial light mode & obsidian dark mode with zero-flicker persistence
 - Modern financial product visualization
 - Financial overview dashboard
 - Spending and savings insights

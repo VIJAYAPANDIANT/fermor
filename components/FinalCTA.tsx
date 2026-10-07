@@ -21,7 +21,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="relative rounded-2xl sm:rounded-3xl border border-card-border bg-white shadow-elevated p-7 sm:p-12 lg:p-16 text-center overflow-hidden"
+          className="relative rounded-2xl sm:rounded-3xl border border-card-border bg-card shadow-elevated p-7 sm:p-12 lg:p-16 text-center overflow-hidden"
         >
           {/* Subtle Abstract Financial SVG Background Coordinate Curves */}
           <div
@@ -35,23 +35,23 @@ export default function FinalCTA() {
             >
               <defs>
                 <linearGradient id="ctaGridFade" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#124E3F" stopOpacity="0.06" />
-                  <stop offset="100%" stopColor="#124E3F" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.1" />
+                  <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
 
               {/* Trajectory Reference Guidelines */}
-              <line x1="50" y1="80" x2="950" y2="80" stroke="#E7E5DD" strokeDasharray="4 4" strokeWidth="1" />
-              <line x1="50" y1="180" x2="950" y2="180" stroke="#E7E5DD" strokeDasharray="4 4" strokeWidth="1" />
-              <line x1="50" y1="280" x2="950" y2="280" stroke="#E7E5DD" strokeDasharray="4 4" strokeWidth="1" />
+              <line x1="50" y1="80" x2="950" y2="80" stroke="rgb(var(--color-card-border))" strokeDasharray="4 4" strokeWidth="1" />
+              <line x1="50" y1="180" x2="950" y2="180" stroke="rgb(var(--color-card-border))" strokeDasharray="4 4" strokeWidth="1" />
+              <line x1="50" y1="280" x2="950" y2="280" stroke="rgb(var(--color-card-border))" strokeDasharray="4 4" strokeWidth="1" />
 
               {/* Abstract Ascending Financial Wave */}
               <path
                 d="M 50 320 C 250 310, 400 240, 550 210 C 700 180, 820 110, 950 80"
                 fill="none"
-                stroke="#124E3F"
+                stroke="rgb(var(--color-accent))"
                 strokeWidth="1.5"
-                strokeOpacity="0.2"
+                strokeOpacity="0.3"
               />
               <path
                 d="M 50 320 C 250 310, 400 240, 550 210 C 700 180, 820 110, 950 80 L 950 400 L 50 400 Z"

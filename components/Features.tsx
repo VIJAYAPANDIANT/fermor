@@ -58,7 +58,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
+            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-card p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
             <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
@@ -113,8 +113,8 @@ export default function Features() {
                 >
                   <defs>
                     <linearGradient id="miniSpark" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#124E3F" stopOpacity="0.12" />
-                      <stop offset="100%" stopColor="#124E3F" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.18" />
+                      <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
                   <path
@@ -124,11 +124,11 @@ export default function Features() {
                   <path
                     d="M 10 50 C 70 48, 120 38, 180 38 C 240 38, 280 22, 340 22 C 370 22, 385 10, 395 10"
                     fill="none"
-                    stroke="#124E3F"
+                    stroke="rgb(var(--color-accent))"
                     strokeWidth="2"
                     strokeLinecap="round"
                   />
-                  <circle cx="395" cy="10" r="3" fill="#124E3F" />
+                  <circle cx="395" cy="10" r="3" fill="rgb(var(--color-accent))" />
                 </svg>
               </div>
 
@@ -145,7 +145,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
+            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-card p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
             <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
@@ -191,7 +191,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
+            className="md:col-span-12 lg:col-span-5 group rounded-2xl border border-card-border bg-card p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
             <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">
@@ -226,7 +226,7 @@ export default function Features() {
 
               {/* Progress Bar */}
               <div className="space-y-1">
-                <div className="w-full h-1.5 rounded-full bg-white border border-card-border overflow-hidden">
+                <div className="w-full h-1.5 rounded-full bg-card border border-card-border overflow-hidden">
                   <div
                     className="h-full bg-accent rounded-full transition-all duration-300"
                     style={{ width: "72%" }}
@@ -251,7 +251,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: 0.16, ease: "easeOut" }}
-            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-white p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
+            className="md:col-span-12 lg:col-span-7 group rounded-2xl border border-card-border bg-card p-6 sm:p-7 lg:p-8 shadow-subtle hover:shadow-card hover:border-charcoal/25 hover:-translate-y-0.5 transition-all duration-150 flex flex-col justify-between"
           >
             <div className="space-y-1.5 mb-5">
               <div className="flex items-center justify-between">

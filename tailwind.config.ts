@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,26 +11,26 @@ const config: Config = {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: "#FAF9F5",
-          subtle: "#F4F2EB",
-          muted: "#EDEAE1",
+          DEFAULT: "rgb(var(--color-canvas) / <alpha-value>)",
+          subtle: "rgb(var(--color-canvas-subtle) / <alpha-value>)",
+          muted: "rgb(var(--color-canvas-muted) / <alpha-value>)",
         },
         charcoal: {
-          DEFAULT: "#121316",
-          light: "#2B2D33",
-          muted: "#666973",
-          faint: "#9699A3",
+          DEFAULT: "rgb(var(--color-charcoal) / <alpha-value>)",
+          light: "rgb(var(--color-charcoal-light) / <alpha-value>)",
+          muted: "rgb(var(--color-charcoal-muted) / <alpha-value>)",
+          faint: "rgb(var(--color-charcoal-faint) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "#124E3F",
-          hover: "#0D3A2F",
-          subtle: "#EDF5F2",
-          border: "#B2D8CD",
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          hover: "rgb(var(--color-accent-hover) / <alpha-value>)",
+          subtle: "rgb(var(--color-accent-subtle) / <alpha-value>)",
+          border: "rgb(var(--color-accent-border) / <alpha-value>)",
         },
         card: {
-          DEFAULT: "#FFFFFF",
-          border: "#E7E5DD",
-          borderSubtle: "#F0EEE8",
+          DEFAULT: "rgb(var(--color-card) / <alpha-value>)",
+          border: "rgb(var(--color-card-border) / <alpha-value>)",
+          borderSubtle: "rgb(var(--color-card-border-subtle) / <alpha-value>)",
         },
       },
       fontFamily: {
@@ -37,9 +38,9 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       boxShadow: {
-        subtle: "0 1px 3px rgba(18, 19, 22, 0.04), 0 1px 2px rgba(18, 19, 22, 0.02)",
-        card: "0 4px 20px -2px rgba(18, 19, 22, 0.05), 0 2px 6px -1px rgba(18, 19, 22, 0.03)",
-        elevated: "0 12px 32px -4px rgba(18, 19, 22, 0.08), 0 4px 12px -2px rgba(18, 19, 22, 0.03)",
+        subtle: "var(--shadow-subtle)",
+        card: "var(--shadow-card)",
+        elevated: "var(--shadow-elevated)",
       },
     },
   },

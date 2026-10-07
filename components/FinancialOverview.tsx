@@ -65,7 +65,7 @@ export default function FinancialOverview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="rounded-2xl sm:rounded-3xl border border-card-border bg-white shadow-elevated p-5 sm:p-8 lg:p-10 relative"
+          className="rounded-2xl sm:rounded-3xl border border-card-border bg-card shadow-elevated p-5 sm:p-8 lg:p-10 relative"
         >
           {/* Top Interface Bar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-card-borderSubtle">
@@ -138,15 +138,15 @@ export default function FinancialOverview() {
               >
                 <defs>
                   <linearGradient id="overviewGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#124E3F" stopOpacity="0.14" />
-                    <stop offset="95%" stopColor="#124E3F" stopOpacity="0.0" />
+                    <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.16" />
+                    <stop offset="95%" stopColor="rgb(var(--color-accent))" stopOpacity="0.0" />
                   </linearGradient>
                 </defs>
 
                 {/* Subtle Horizontal Reference Guidelines */}
-                <line x1="20" y1="40" x2="580" y2="40" stroke="#E7E5DD" strokeDasharray="3 3" strokeWidth="0.8" />
-                <line x1="20" y1="95" x2="580" y2="95" stroke="#E7E5DD" strokeDasharray="3 3" strokeWidth="0.8" />
-                <line x1="20" y1="150" x2="580" y2="150" stroke="#E7E5DD" strokeDasharray="3 3" strokeWidth="0.8" />
+                <line x1="20" y1="40" x2="580" y2="40" stroke="rgb(var(--color-card-border))" strokeDasharray="3 3" strokeWidth="0.8" />
+                <line x1="20" y1="95" x2="580" y2="95" stroke="rgb(var(--color-card-border))" strokeDasharray="3 3" strokeWidth="0.8" />
+                <line x1="20" y1="150" x2="580" y2="150" stroke="rgb(var(--color-card-border))" strokeDasharray="3 3" strokeWidth="0.8" />
 
                 {/* Area Gradient Fill */}
                 <path d={areaPath} fill="url(#overviewGradient)" />
@@ -155,7 +155,7 @@ export default function FinancialOverview() {
                 <path
                   d={chartPath}
                   fill="none"
-                  stroke="#124E3F"
+                  stroke="rgb(var(--color-accent))"
                   strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -177,8 +177,8 @@ export default function FinancialOverview() {
                         cx={pt.x}
                         cy={pt.y}
                         r={isActive || isLatest ? 4.5 : 3}
-                        fill={isActive || isLatest ? "#124E3F" : "#FFFFFF"}
-                        stroke="#124E3F"
+                        fill={isActive || isLatest ? "rgb(var(--color-accent))" : "rgb(var(--color-card))"}
+                        stroke="rgb(var(--color-accent))"
                         strokeWidth="2"
                         className="transition-all duration-150"
                       />
@@ -207,7 +207,7 @@ export default function FinancialOverview() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
             
             {/* Metric 1: Spending */}
-            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-card flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
                   Monthly spending
@@ -224,7 +224,7 @@ export default function FinancialOverview() {
             </div>
 
             {/* Metric 2: Savings */}
-            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-card flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
                   Savings reserve
@@ -241,7 +241,7 @@ export default function FinancialOverview() {
             </div>
 
             {/* Metric 3: Monthly Change */}
-            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-white flex flex-col justify-between shadow-subtle">
+            <div className="md:col-span-4 p-4 sm:p-5 rounded-xl border border-card-border bg-card flex flex-col justify-between shadow-subtle">
               <div className="space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted">
                   Monthly change

@@ -51,7 +51,7 @@ export default function ValueStrip() {
                     : "md:pl-8"
                 }`}
               >
-                <div className="w-8 h-8 rounded-lg bg-white border border-card-border flex items-center justify-center shrink-0 text-charcoal shadow-subtle">
+                <div className="w-8 h-8 rounded-lg bg-card border border-card-border flex items-center justify-center shrink-0 text-charcoal shadow-subtle">
                   <Icon className="w-4 h-4 text-accent" />
                 </div>
                 <div className="space-y-1">
