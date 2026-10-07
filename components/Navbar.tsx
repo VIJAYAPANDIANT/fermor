@@ -102,12 +102,6 @@ export default function Navbar() {
           </button>
 
           <Link
-            href="#signin"
-            className="text-[13px] font-medium text-charcoal-muted hover:text-charcoal px-3 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent/40 rounded-md"
-          >
-            Sign in
-          </Link>
-          <Link
             href="#get-started"
             className="inline-flex items-center gap-1.5 h-9 px-4 rounded-full text-xs font-semibold text-canvas bg-charcoal hover:bg-charcoal-light active:scale-[0.98] transition-all duration-150 shadow-subtle hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/40"
           >
@@ -206,13 +200,6 @@ export default function Navbar() {
           </div>
 
           <div className="pt-6 border-t border-card-border flex flex-col gap-3 pb-8">
-            <Link
-              href="#signin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 text-sm font-medium text-charcoal hover:bg-canvas-subtle rounded-full border border-card-border transition-colors bg-card"
-            >
-              Sign in
-            </Link>
             <Link
               href="#get-started"
               onClick={() => setMobileMenuOpen(false)}
