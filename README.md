@@ -4,7 +4,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?style=flat-square&logo=framer)](https://www.framer.com/motion/)
-[![Vercel Ready](https://img.shields.io/badge/Deployment-Vercel_Ready-000000?style=flat-square&logo=vercel)](https://vercel.com/)
+[![Vercel Live](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=flat-square&logo=vercel)](https://fermor-kohl.vercel.app/)
 
 **Fermor** is a modern financial platform engineered to deliver **financial clarity, not simply banking**. The interface prioritizes calm, intelligent, trustworthy, and simple design patterns—helping people understand where their money goes, make smarter decisions, and build toward what matters.
 
@@ -14,7 +14,9 @@ Built from first principles as an editorial, high-craft web application rather t
 
 ## ✦ Live Demo
 
-**Coming soon** *(Available upon Vercel deployment)*
+Experience the live application:  
+🚀 **[Fermor — Your Money, Made Clearer](https://fermor-kohl.vercel.app/)**  
+Production URL: [`https://fermor-kohl.vercel.app/`](https://fermor-kohl.vercel.app/)
 
 ---
 
@@ -156,12 +158,11 @@ npm run start
 
 ## ✦ Deployment
 
-This project is optimized for zero-config deployment on [Vercel](https://vercel.com):
+This project is deployed and live on [Vercel](https://vercel.com):
 
-1. Push your repository to GitHub.
-2. In the Vercel dashboard, click **Add New Project** and import `fermor`.
-3. Vercel automatically detects Next.js App Router and applies optimal caching and edge delivery.
-4. Click **Deploy**.
+* **Live Website**: **[Fermor — Your Money, Made Clearer](https://fermor-kohl.vercel.app/)**
+* **Production URL**: [`https://fermor-kohl.vercel.app/`](https://fermor-kohl.vercel.app/)
+* **Platform**: Vercel Edge Network with Next.js App Router static pre-rendering and asset compression.
 
 ---
 
