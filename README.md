@@ -18,6 +18,25 @@ Built from first principles as an editorial, high-craft web application rather t
 
 ---
 
+## ✦ Tech Stack
+
+| Category | Technology | Version | Description & Role |
+| :--- | :--- | :--- | :--- |
+| **Framework** | [Next.js](https://nextjs.org/) | `15.1.7` | Modern App Router, hybrid static pre-rendering, optimized routing, and edge-ready deployment |
+| **UI Library** | [React](https://react.dev/) | `19.0.0` | Component-driven architecture, latest concurrent rendering primitives, and fine-grained state management |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) | `5.7.3` | Strict type safety, interface-driven prop validation, zero runtime errors |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `3.4.17` | Utility-first styling engine with custom design tokens, dark mode class switching, and responsive breakpoints |
+| **Motion & Physics** | [Framer Motion](https://www.framer.com/motion/) | `12.4.7` | Hardware-accelerated animations, scroll-triggered reveals, and accessible `useReducedMotion()` support |
+| **Icons** | [Lucide React](https://lucide.dev/) | `1.16.0` | Clean, accessible vector icons tree-shaken for minimal bundle impact |
+| **Data Visualization** | Native SVG Math | Standard | Handcrafted cubic Bézier curves and viewBox coordinate projections (zero external charting bloat) |
+| **CSS Processing** | PostCSS & Autoprefixer | `8.5.2` | CSS compilation and automated vendor prefixing |
+| **Code Quality** | ESLint 9 & TypeScript-ESLint | `9.39.5` | Strict static code analysis and linting |
+| **Deployment** | [Vercel](https://vercel.com/) | Edge | Global CDN distribution, automatic caching, and asset compression |
+
+> **Performance Note**: Fermor deliberately avoids heavy external charting packages (such as Recharts or Chart.js, which add 120kB+ of JavaScript overhead and introduce canvas repaints). All trajectory graphs, histograms, and sparklines are written directly with native, responsive SVG coordinate geometry.
+
+---
+
 ## ✦ Key Features & Capabilities
 
 - **Responsive Fintech Homepage**: Polished layout scaling seamlessly from 360px mobile viewports up to 1440px+ ultra-wide desktop displays.
